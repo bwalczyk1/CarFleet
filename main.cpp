@@ -3,8 +3,8 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    CarFleet w;
-    w.show();
-    return a.exec();
+    QApplication app(argc, argv);
+    CarFleet carFleet;
+    carFleet.show();
+    return app.exec();
 }
