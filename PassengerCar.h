@@ -1,7 +1,6 @@
 #pragma once
 #include "CarBase.h"
-#include "FileWriteable.h"
-class PassengerCar : public CarBase, public FileWriteable {
+class PassengerCar : public CarBase {
 private:
 	int seats;
 public:

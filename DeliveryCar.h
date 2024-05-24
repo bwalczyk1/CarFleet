@@ -1,7 +1,6 @@
 #pragma once
 #include "CarBase.h"
-#include "FileWriteable.h"
-class DeliveryCar : public CarBase, public FileWriteable {
+class DeliveryCar : public CarBase {
 private:
 	float maxAuthorisedMass;
 public:

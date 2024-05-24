@@ -1,7 +1,8 @@
 #pragma once
 #include<string>
+#include "FileWriteable.h"
 
-class CarBase {
+class CarBase : public FileWriteable {
 protected:
     std::string brand;
     std::string model;
@@ -19,6 +20,8 @@ public:
     int getProductionYear();
     std::string getLicenseNumber();
     float getMass();
+    virtual std::string getAsString() = 0;
+    virtual void setFromString( std::string data ) = 0;
 
     void setBrand( std::string newBrand );
     void setModel( std::string newModel );
