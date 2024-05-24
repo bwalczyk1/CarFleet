@@ -7,7 +7,6 @@ protected:
     std::string model;
     int productionYear;
     std::string licenseNumber;
-//    VehicleType vehicleType;
     float mass;
 public:
     CarBase() : productionYear(0), mass(0) {};
@@ -19,14 +18,12 @@ public:
     std::string getModel();
     int getProductionYear();
     std::string getLicenseNumber();
-    //VehicleType getVehicleType();
     float getMass();
 
     void setBrand( std::string newBrand );
     void setModel( std::string newModel );
     void setProductionYear( int newProductionYear );
     void setLicenseNumber( std::string newLicenseNumber );
-    //void setVehicleType( VehicleType newVehicleType );
     void setMass( float newMass );
 
     virtual std::string getInfo() = 0;
