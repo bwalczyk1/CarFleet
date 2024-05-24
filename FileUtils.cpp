@@ -2,6 +2,7 @@
 #include "PassengerCar.h"
 #include "DeliveryCar.h"
 #include <fstream>
+#include <algorithm>
 #include <iostream>
 
 void FileUtils::writeCarVector( std::string fileName, std::vector<CarBase*> &vect ) {
@@ -21,20 +22,29 @@ void FileUtils::readCarVector( std::string fileName, std::vector<CarBase*> &vect
 	vect.clear();
 	std::string line;
 	for ( int i = 1; std::getline( file, line ); i++ ) {
-		int first = line.find( ';' );
-		std::string type = line.substr( 0, first );
-		if ( type == PassengerCar::TYPE ) {
-			PassengerCar *tmp = new PassengerCar();
-			tmp->setFromString( line.substr( first + 1 ) );
-			vect.emplace_back( tmp );
+		// trim
+		line.erase(line.begin(), std::find_if( line.begin(), line.end(), [](int c) {return !std::isspace(c);} ));
+		if ( line.empty() )
+			continue;
+		try{
+			int first = line.find( ';' );
+			std::string type = line.substr( 0, first );
+			if ( type == PassengerCar::TYPE ) {
+				PassengerCar *tmp = new PassengerCar();
+				tmp->setFromString( line.substr( first + 1 ) );
+				vect.emplace_back( tmp );
+			}
+			else if ( type == DeliveryCar::TYPE ) {
+				DeliveryCar *tmp = new DeliveryCar();
+				tmp->setFromString( line.substr( first + 1 ) );
+				vect.emplace_back( tmp );
+			}
+			else
+				std::cerr << "Unrecognized data at line " << i << " skipping" << std::endl;
 		}
-		else if ( type == DeliveryCar::TYPE ) {
-			DeliveryCar *tmp = new DeliveryCar();
-			tmp->setFromString( line.substr( first + 1 ) );
-			vect.emplace_back( tmp );
+		catch( std::invalid_argument err ){
+			std::cerr << err.what() << " at line " << i << std::endl;
 		}
-		else
-			std::cerr << "Unrecognized data at line " << i << " skipping" << std::endl;
 	}
 	vect.shrink_to_fit();
 }

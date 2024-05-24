@@ -1,5 +1,6 @@
 #include "DeliveryCar.h"
 #include<vector>
+#include<stdexcept>
 
 DeliveryCar::DeliveryCar( const DeliveryCar &carArg ) : CarBase( carArg ) {
 	this->maxAuthorisedMass = carArg.maxAuthorisedMass;
@@ -26,6 +27,8 @@ void DeliveryCar::setFromString( std::string data ) {
 		end = data.find( del, start );
 		args.push_back( data.substr( start, end - start ) );
 	} while ( end != -1 );
+	if(args.size() < 6)
+		throw std::invalid_argument("Not enough arguments in string");
 	this->brand = args[0];
 	this->model = args[1];
 	this->productionYear = std::stoi( args[2] );
