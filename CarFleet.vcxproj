@@ -114,6 +114,7 @@
   <ItemGroup>
     <ClInclude Include="DeliveryCar.h" />
     <ClInclude Include="FileUtils.h" />
+    <ClInclude Include="FileWriteable.h" />
     <ClInclude Include="PassengerCar.h" />
     <ClInclude Include="CarBase.h" />
   </ItemGroup>

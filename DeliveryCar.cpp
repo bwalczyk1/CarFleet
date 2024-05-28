@@ -9,7 +9,7 @@ DeliveryCar::DeliveryCar( const DeliveryCar &carArg ) : CarBase( carArg ) {
 const std::string DeliveryCar::TYPE = "DELIVERY";
 
 std::string DeliveryCar::getInfo() {
-	return this->brand + " " + this->model + ", rok produkcji: " + std::to_string( this->productionYear ) + ", maks. ³adunek: " + std::to_string(this->getMaxLoad()) + "kg, nr rejestracyjny: " + this->licenseNumber;
+	return this->brand + " " + this->model + ", rok produkcji: " + std::to_string(this->productionYear) + ", maks. ładunek: " + std::to_string(this->getMaxLoad()) + " kg, nr rejestracyjny: " + this->licenseNumber;
 }
 
 std::string DeliveryCar::getAsString() {

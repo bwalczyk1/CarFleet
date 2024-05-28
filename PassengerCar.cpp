@@ -9,7 +9,7 @@ PassengerCar::PassengerCar( const PassengerCar &carArg ) : CarBase( carArg ) {
 const std::string PassengerCar::TYPE = "PASSENGER";
 
 std::string PassengerCar::getInfo() {
-	return this->brand + " " + this->model + ", rok produkcji: " + std::to_string( this->productionYear ) + ", " + std::to_string(this->seats) + " pasa¿erów, nr rejestracyjny: " + this->licenseNumber;
+	return this->brand + " " + this->model + ", rok produkcji: " + std::to_string( this->productionYear ) + ", " + std::to_string(this->seats) + " pasażerów, nr rejestracyjny: " + this->licenseNumber;
 }
 
 std::string PassengerCar::getAsString() {
@@ -42,5 +42,5 @@ int PassengerCar::getSeats() {
 }
 
 void PassengerCar::setSeats( int newSeats ) {
-	this->seats = seats;
+	this->seats = newSeats;
 }
