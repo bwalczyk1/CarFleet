@@ -36,7 +36,7 @@
     <Import Project="$(QtMsBuild)\qt_defaults.props" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
-    <QtInstall>6.7.0_msvc2019_64</QtInstall>
+    <QtInstall>6.6.3_msvc2019_64</QtInstall>
     <QtModules>core;gui;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
@@ -98,6 +98,7 @@
     <QtUic Include="CarFleet.ui" />
     <QtMoc Include="CarFleet.h" />
     <ClCompile Include="DeliveryCar.cpp" />
+    <ClCompile Include="FileUtils.cpp" />
     <ClCompile Include="PassengerCar.cpp" />
     <ClCompile Include="CarBase.cpp" />
     <ClCompile Include="CarFleet.cpp" />
@@ -112,6 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DeliveryCar.h" />
+    <ClInclude Include="FileUtils.h" />
     <ClInclude Include="PassengerCar.h" />
     <ClInclude Include="CarBase.h" />
   </ItemGroup>

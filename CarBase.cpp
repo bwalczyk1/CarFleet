@@ -5,7 +5,6 @@ CarBase::CarBase( const CarBase &carArg ) {
     this->model = carArg.model;
     this->productionYear = carArg.productionYear;
     this->licenseNumber = carArg.licenseNumber;
-    // this->vehicleType = carArg.vehicleType;
     this->mass = carArg.mass;
 }
 
@@ -24,10 +23,6 @@ int CarBase::getProductionYear() {
 std::string CarBase::getLicenseNumber() {
     return this->licenseNumber;
 }
-
-//VehicleType CarBase::getVehicleType() {
-//    return this->vehicleType;
-//}
 
 float CarBase::getMass() {
     return this->mass;
@@ -48,10 +43,6 @@ void CarBase::setProductionYear( int newProductionYear ) {
 void CarBase::setLicenseNumber( std::string newLicenseNumber ) {
     this->licenseNumber = newLicenseNumber;
 }
-
-//void CarBase::setVehicleType( VehicleType newVehicleType ) {
-//    this->vehicleType = newVehicleType;
-//}
 
 void CarBase::setMass( float newMass ) {
     this->mass = newMass;

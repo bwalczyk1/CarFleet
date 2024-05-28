@@ -1,13 +1,13 @@
 #pragma once
 #include<string>
+#include "FileWriteable.h"
 
-class CarBase {
+class CarBase : public FileWriteable {
 protected:
     std::string brand;
     std::string model;
     int productionYear;
     std::string licenseNumber;
-//    VehicleType vehicleType;
     float mass;
 public:
     CarBase() : productionYear(0), mass(0) {};
@@ -19,14 +19,14 @@ public:
     std::string getModel();
     int getProductionYear();
     std::string getLicenseNumber();
-    //VehicleType getVehicleType();
     float getMass();
+    virtual std::string getAsString() = 0;
+    virtual void setFromString( std::string data ) = 0;
 
     void setBrand( std::string newBrand );
     void setModel( std::string newModel );
     void setProductionYear( int newProductionYear );
     void setLicenseNumber( std::string newLicenseNumber );
-    //void setVehicleType( VehicleType newVehicleType );
     void setMass( float newMass );
 
     virtual std::string getInfo() = 0;
