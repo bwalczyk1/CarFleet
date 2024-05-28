@@ -19,7 +19,7 @@
      <rect>
       <x>10</x>
       <y>0</y>
-      <width>91</width>
+      <width>101</width>
       <height>21</height>
      </rect>
     </property>
@@ -29,7 +29,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Car</string>
+     <string>Samochód</string>
     </property>
    </widget>
    <widget class="QWidget" name="formLayoutWidget">
@@ -51,7 +51,7 @@
         </size>
        </property>
        <property name="text">
-        <string>Brand</string>
+        <string>Marka</string>
        </property>
       </widget>
      </item>
@@ -67,6 +67,105 @@
      </item>
      <item row="1" column="1">
       <widget class="QLineEdit" name="modelLineEdit"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="yearLabel">
+       <property name="text">
+        <string>Rok produkcji</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QSpinBox" name="yearSpinBox">
+       <property name="minimum">
+        <number>1886</number>
+       </property>
+       <property name="maximum">
+        <number>2024</number>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="licenceNumberLabel">
+       <property name="text">
+        <string>Numer rejestracyjny</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="licenceNumberLineEdit"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="massLabel">
+       <property name="text">
+        <string>Masa pojazdu [kg]</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QDoubleSpinBox" name="massDoubleSpinBox">
+       <property name="minimum">
+        <double>900.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>12000.000000000000000</double>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="typeLabel">
+       <property name="text">
+        <string>Rodzaj pojazdu</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QComboBox" name="typeComboBox">
+       <item>
+        <property name="text">
+         <string>osobowy</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>dostawczy</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="seatsLabel">
+       <property name="text">
+        <string>Liczba miejsc</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QSpinBox" name="seatsSpinBox">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="maxMassLabel">
+       <property name="text">
+        <string>DMC</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QDoubleSpinBox" name="maxMassDoubleSpinBox">
+       <property name="minimum">
+        <double>900.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>20000.000000000000000</double>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -549,7 +648,7 @@
      </palette>
     </property>
     <property name="text">
-     <string>Delete</string>
+     <string>Usuń</string>
     </property>
    </widget>
    <widget class="QPushButton" name="editButton">
@@ -599,7 +698,7 @@
      </palette>
     </property>
     <property name="text">
-     <string>Edit</string>
+     <string>Edytuj</string>
     </property>
    </widget>
   </widget>

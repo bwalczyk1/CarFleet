@@ -14,13 +14,13 @@ public:
 private slots:
     void onItemDoubleClicked(QListWidgetItem* item);
     void onAddButtonClicked();
-    void receiveCar(const std::vector<std::string> *car);
+    void receiveCar(CarBase *car);
     void receiveEraseIndex(const int index);
 
 private:
     Ui::CarFleetClass ui;
     CarView *carView;
-    std::vector<std::vector<std::string>>cars;
+    std::vector<CarBase*> cars;
 
     void updateListWidget();
 };

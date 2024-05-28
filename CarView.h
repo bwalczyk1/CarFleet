@@ -2,8 +2,7 @@
 
 #include <QMainWindow>
 #include "ui_CarView.h"
-#include <string>
-#include <vector>
+#include <CarBase.h>
 
 enum WindowMode {
 	VIEW,
@@ -19,21 +18,22 @@ public:
 	CarView(QWidget *parent = nullptr);
 	~CarView();
 
-	void setData(WindowMode mode, std::vector<std::string> *car = nullptr, const int index = NULL);
+	void setData(WindowMode mode, CarBase *car = nullptr, const int index = NULL);
 
 signals:
-	void sendCar(const std::vector<std::string> *data);
+	void sendCar(CarBase *data);
 	void sendEraseIndex(const int index);
 
 private slots:
+	void onTypeChanged(int index);
 	void onEditButtonClicked();
 	void onDeleteButtonClicked();
 
 private:
 	Ui::CarViewClass ui;
 	WindowMode mode;
-	std::vector<std::string> *car;
+	CarBase *car;
 	int index;
 
-	void setFormReadOnly(bool readOnly);
+	void setFormReadOnly();
 };
