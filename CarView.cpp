@@ -41,7 +41,7 @@ void CarView::setData(WindowMode mode, CarBase *car, const int index) {
         this->index = index;
     }
 
-    ui.editButton->setText(mode == VIEW ? "Edytuj" : "Zapisz");
+    ui.editButton->setText(mode == VIEW ? "Edit" : "Save");
     this->mode = mode;
     setFormReadOnly();
 }
@@ -83,7 +83,7 @@ void CarView::onEditButtonClicked() {
     }
 
     if (ui.typeComboBox->currentIndex() && ui.maxMassDoubleSpinBox->value() < ui.massDoubleSpinBox->value()) {
-        QMessageBox::information(nullptr, "B³êdne dane", "DMC nie mo¿e byæ mniejsze niŸ masa pojazdu.");
+        QMessageBox::information(nullptr, "Invalid data", "Max authorised mass cannot be less than mass of the vehicle.");
 
         return;
     }

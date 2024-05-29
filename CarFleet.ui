@@ -39,7 +39,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Flota</string>
+     <string>Fleet</string>
     </property>
    </widget>
    <widget class="QPushButton" name="addButton">
@@ -52,7 +52,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Dodaj</string>
+     <string>Add</string>
     </property>
    </widget>
   </widget>

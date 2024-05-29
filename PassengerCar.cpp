@@ -9,7 +9,7 @@ PassengerCar::PassengerCar( const PassengerCar &carArg ) : CarBase( carArg ) {
 const std::string PassengerCar::TYPE = "PASSENGER";
 
 std::string PassengerCar::getInfo() {
-	return this->brand + " " + this->model + ", rok produkcji: " + std::to_string( this->productionYear ) + ", " + std::to_string(this->seats) + " pasażerów, nr rejestracyjny: " + this->licenseNumber;
+	return this->brand + " " + this->model + ", prod. year: " + std::to_string( this->productionYear ) + ", " + std::to_string(this->seats) + " passengers, license number: " + this->licenseNumber;
 }
 
 std::string PassengerCar::getAsString() {
