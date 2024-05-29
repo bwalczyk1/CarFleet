@@ -46,5 +46,6 @@ void FileUtils::readCarVector( std::string fileName, std::vector<CarBase*> &vect
 			std::cerr << err.what() << " at line " << i << std::endl;
 		}
 	}
+	file.close();
 	vect.shrink_to_fit();
 }
